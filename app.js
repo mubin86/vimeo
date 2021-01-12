@@ -26,64 +26,64 @@ client.request(
     console.log(body);
   }
 );
-var scopes, token;
-const redirect_uri = "https://beta.somoyinfo.com";
+// var scopes, token;
+// const redirect_uri = "https://beta.somoyinfo.com";
 
-client.generateClientCredentials(
-  ["public", "upload", "video_files"],
-  function (err, response) {
-    if (err) {
-      throw err;
-    }
+// client.generateClientCredentials(
+//   ["public", "upload", "video_files"],
+//   function (err, response) {
+//     if (err) {
+//       throw err;
+//     }
 
-    token = response.access_token;
+//     token = response.access_token;
 
-    // console.log(token);
+//     // console.log(token);
 
-    // Other useful information is included alongside the access token,
-    // which you can dump out to see, or visit our API documentation.
-    //
-    // We include the final scopes granted to the token. This is
-    // important because the user, or API, might revoke scopes during
-    // the authentication process.
-    scopes = response.scope;
-    // console.log(scopes);
-  }
-);
+//     // Other useful information is included alongside the access token,
+//     // which you can dump out to see, or visit our API documentation.
+//     //
+//     // We include the final scopes granted to the token. This is
+//     // important because the user, or API, might revoke scopes during
+//     // the authentication process.
+//     scopes = response.scope;
+//     // console.log(scopes);
+//   }
+// );
 
-var url = client.buildAuthorizationEndpoint(
-  "https://beta.somoyinfo.com",
-  scopes,
-  "test123*"
-);
+// var url = client.buildAuthorizationEndpoint(
+//   "https://beta.somoyinfo.com",
+//   scopes,
+//   "test123*"
+// );
 
-client.accessToken("abc", redirect_uri, function (err, response) {
-  // if (err) {
-  //   return response.end("error\n" + err);
-  // }
+// client.accessToken("abc", redirect_uri, function (err, response) {
+//   // if (err) {
+//   //   return response.end("error\n" + err);
+//   // }
 
-  if (token) {
-    // At this state the code has been successfully exchanged for an
-    // access token
-    client.setAccessToken(token);
+//   if (token) {
+//     // At this state the code has been successfully exchanged for an
+//     // access token
+//     client.setAccessToken(token);
 
-    // Other useful information is included alongside the access token,
-    // which you can dump out to see, or visit our API documentation.
-    //
-    // We include the final scopes granted to the token. This is
-    // important because the user, or API, might revoke scopes during
-    // the authentication process.
-    // var scopes = response.scope;
-    // console.log(scopes);
+//     // Other useful information is included alongside the access token,
+//     // which you can dump out to see, or visit our API documentation.
+//     //
+//     // We include the final scopes granted to the token. This is
+//     // important because the user, or API, might revoke scopes during
+//     // the authentication process.
+//     // var scopes = response.scope;
+//     // console.log(scopes);
 
-    // // We also include the full user response of the newly
-    // // authenticated user.
-    // var user = response.user;
-    // console.log(user);
-  }
-});
+//     // // We also include the full user response of the newly
+//     // // authenticated user.
+//     // var user = response.user;
+//     // console.log(user);
+//   }
+// });
 
-let file_name = "/home/sayburgh/Downloads/Sample Videos 2.mp4";
+let file_name = "/home/sayburgh/Downloads/SampleVideo_1280x720_2mb.mp4";
 client.upload(
   file_name,
   {
