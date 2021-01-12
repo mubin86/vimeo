@@ -9,23 +9,23 @@ let client = new Vimeo(
   process.env.client_id,
   process.env.client_secret,
   // process.env.access_token
-
-  process.env.unauth_acess_token
+  process.env.new_access_token
+  // process.env.unauth_acess_token
 );
 
-// client.request(
-//   {
-//     method: "GET",
-//     path: "/tutorial",
-//   },
-//   function (error, body, status_code, headers) {
-//     if (error) {
-//       console.log(error);
-//     }
+client.request(
+  {
+    method: "GET",
+    path: "/tutorial",
+  },
+  function (error, body, status_code, headers) {
+    if (error) {
+      console.log(error);
+    }
 
-//     console.log(body);
-//   }
-// );
+    console.log(body);
+  }
+);
 var scopes, token;
 const redirect_uri = "https://beta.somoyinfo.com";
 
