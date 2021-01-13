@@ -83,21 +83,66 @@ client.request(
 //   }
 // });
 
-let file_name = "/home/sayburgh/Downloads/SampleVideo_1280x720_2mb.mp4";
-client.upload(
-  file_name,
-  {
-    name: "sample video",
-    description: "The description goes here.",
-  },
-  function (uri) {
-    console.log("Your video URI is: " + uri);
-  },
-  function (bytes_uploaded, bytes_total) {
-    var percentage = ((bytes_uploaded / bytes_total) * 100).toFixed(2);
-    console.log(bytes_uploaded, bytes_total, percentage + "%");
-  },
-  function (error) {
-    console.log("Failed because: " + error);
-  }
-);
+// let file_name = "/home/sayburgh/Downloads/SampleVideo_1280x720_2mb.mp4";
+// client.upload(
+//   file_name,
+//   {
+//     name: "sample video",
+//     description: "The description goes here.",
+//   },
+//   function (uri) {
+//     console.log("Your video URI is: " + uri);
+//   },
+//   function (bytes_uploaded, bytes_total) {
+//     var percentage = ((bytes_uploaded / bytes_total) * 100).toFixed(2);
+//     console.log(bytes_uploaded, bytes_total, percentage + "%");
+//   },
+//   function (error) {
+//     console.log("Failed because: " + error);
+//   }
+// );
+
+// // client.request(
+// //   /*options*/ {
+// //     // This is the path for the videos contained within the staff picks
+// //     // channels
+// //     path: "https://vimeo.com/manage/videos",
+// //     // This adds the parameters to request page two, and 10 items per
+// //     // page
+// //     query: {
+// //       page: 1,
+// //       per_page: 1,
+// //       fields: "uri,name,description,duration,created_time,modified_time",
+// //     },
+// //   },
+// //   /*callback*/ function (error, body, status_code, headers) {
+// //     if (error) {
+// //       console.log("error");
+// //       console.log(error);
+// //     } else {
+// //       console.log("body");
+// //       console.log(body);
+// //     }
+
+// //     console.log("status code");
+// //     console.log(status_code);
+// //     console.log("headers");
+// //     console.log(headers);
+// //   }
+// // );
+
+// // get the https link of the video
+// client.request(
+//   "/videos/499613358" + "?fields=link",
+//   function (error, body, statusCode, headers) {
+//     if (error) {
+//       console.log("There was an error making the request.");
+//       console.log("Server reported: " + error);
+//       return;
+//     }
+
+//     console.log(`your status code id ${statusCode}`);
+//     console.log("Your video link is: " + body.link);
+//     // console.log("Your video name is: " + body.name);
+//   }
+// );
